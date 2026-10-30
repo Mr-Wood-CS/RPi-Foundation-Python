@@ -1,0 +1,230 @@
+[
+  {
+    "id": "step-1",
+    "title": "What you will make",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Design and code a game where the player must collect objects and escape from a house, making sure to avoid all the monsters!"
+      },
+      {
+        "type": "image",
+        "alt": "Example of the text-based game",
+        "src": "./lesson-assets/page-1-2.png"
+      }
+    ]
+  },
+  {
+    "id": "step-2",
+    "title": "Add a new room",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Open the [starter project](https://editor.raspberrypi.org/en/projects/rpg-starter)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Here is a basic maze that represents a house with two rooms. The rooms are both empty for now. Here’s a map of the game:"
+      },
+      {
+        "type": "image",
+        "alt": "Map showing the Hall and Kitchen",
+        "src": "./lesson-assets/page-2-1.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Press **Run** to start the game. Type `go south` to move from the Hall to the Kitchen, and then `go north` to go back to the Hall again."
+      },
+      {
+        "type": "paragraph",
+        "text": "What happens when you type in a direction that you cannot go? Type `go west` in the Hall."
+      },
+      {
+        "type": "heading",
+        "text": "Answer"
+      },
+      {
+        "type": "paragraph",
+        "text": "Look at the code and find the `rooms` variable. The map is coded as a dictionary of rooms:"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "text": "# A dictionary linking a room to other rooms\nrooms = {\n    'Hall' : {\n        'south' : 'Kitchen'\n    },\n    'Kitchen' : {\n        'north' : 'Hall'\n    }\n}"
+      },
+      {
+        "type": "paragraph",
+        "text": "Each room is a dictionary, and rooms are linked together using directions."
+      },
+      {
+        "type": "paragraph",
+        "text": "Add a Dining Room to your map, to the east of the Hall. Don’t forget to add a comma to the end of the previous line when you add a new direction."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "text": "# A dictionary linking a room to other rooms\nrooms = {\n    'Hall' : {\n        'south' : 'Kitchen',\n        'east' : 'Dining Room'\n    },\n    'Kitchen' : {\n        'north' : 'Hall'\n    },\n    'Dining Room' : {\n        'west' : 'Hall'\n    }\n}"
+      },
+      {
+        "type": "image",
+        "alt": "Map with the Dining Room east of the Hall",
+        "src": "./lesson-assets/page-3-1.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Click **Stop**, then click **Run** to try out the game with your new Dining Room code."
+      },
+      {
+        "type": "paragraph",
+        "text": "Type `go east` from the Hall to move into the Dining Room, and `go west` to move back to the Hall."
+      }
+    ]
+  },
+  {
+    "id": "step-3",
+    "title": "Add items to collect",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Add items in the rooms for the player to collect as they move through the maze."
+      },
+      {
+        "type": "paragraph",
+        "text": "To put an item in a room, you add it to a room’s dictionary. Add a key in the Hall."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "text": "# A dictionary linking a room to other rooms\nrooms = {\n    'Hall' : {\n        'south' : 'Kitchen',\n        'east' : 'Dining Room',\n        'item' : 'key'\n    },"
+      },
+      {
+        "type": "paragraph",
+        "text": "Remember to put a comma after the line above the new item, or your program won’t run!"
+      },
+      {
+        "type": "paragraph",
+        "text": "Press **Stop** and then **Run**, and you can now see a key in the Hall. You can even pick it up (by typing `get key`) which adds it to your inventory!"
+      }
+    ]
+  },
+  {
+    "id": "step-4",
+    "title": "Add enemies",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Add enemies to some rooms that the player must avoid."
+      },
+      {
+        "type": "paragraph",
+        "text": "Adding an enemy to a room is the same as adding an item. Add a monster to the Kitchen:"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "text": "# A dictionary linking a room to other rooms\nrooms = {\n    'Hall' : {\n        'south' : 'Kitchen',\n        'east' : 'Dining Room',\n        'item' : 'key'\n    },\n    'Kitchen' : {\n        'north' : 'Hall',\n        'item' : 'monster'\n    },"
+      },
+      {
+        "type": "paragraph",
+        "text": "If the player enters a room with a monster in, the game ends. Test out your code by going into the Kitchen, which now contains a monster."
+      },
+      {
+        "type": "paragraph",
+        "text": "Click **Stop** then click **Run** and type `go south`."
+      },
+      {
+        "type": "code",
+        "language": "text",
+        "text": "---------------------------\nYou are in the Hall\nInventory : []\nYou see a key\n---------------------------\n>go south\nA monster has got you... GAME OVER!"
+      }
+    ]
+  },
+  {
+    "id": "step-5",
+    "title": "Winning the game",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Give your player a mission which needs to be completed to win the game."
+      },
+      {
+        "type": "paragraph",
+        "text": "The player wins by getting to the garden with the key and the magic potion. Here’s a map of the game."
+      },
+      {
+        "type": "image",
+        "alt": "Map with a key in the Hall, a monster in the Kitchen, a potion in the Dining Room, and the Garden",
+        "src": "./lesson-assets/page-5-1.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Add a garden to the south of the dining room. Remember to link the garden to the dining room."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "text": "# A dictionary linking a room to other rooms\nrooms = {\n    'Hall' : {\n        'south' : 'Kitchen',\n        'east' : 'Dining Room',\n        'item' : 'key'\n    },\n    'Kitchen' : {\n        'north' : 'Hall',\n        'item' : 'monster'\n    },\n    'Dining Room' : {\n        'west' : 'Hall',\n        'south' : 'Garden'\n    },\n    'Garden' : {\n        'north' : 'Dining Room'\n    }\n}"
+      },
+      {
+        "type": "paragraph",
+        "text": "Add a potion to the dining room."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "text": "'Dining Room' : {\n    'west' : 'Hall',\n    'south' : 'Garden',\n    'item' : 'potion'\n},"
+      },
+      {
+        "type": "paragraph",
+        "text": "Add this code at the end of the Python file so that the player wins the game when they get to the garden with the key and the potion. Make sure the code is indented, in line with the code above it."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "text": "    if currentRoom == 'Garden' and 'key' in inventory and 'potion' in inventory:\n        print('You escaped the house... YOU WIN!')\n        break"
+      },
+      {
+        "type": "paragraph",
+        "text": "Click **Stop** then click **Run** to test your game to make sure the player can win!"
+      },
+      {
+        "type": "code",
+        "language": "text",
+        "text": "---------------------------\nYou are in the Hall\nInventory : []\nYou see a key\n---------------------------\n>get key\nYou picked up the key\n---------------------------\nYou are in the Hall\nInventory : ['key']\n---------------------------\n>go east\n---------------------------\nYou are in the Dining Room\nInventory : ['key']\nYou see a potion\n---------------------------\n>get potion\nYou picked up the potion\n---------------------------\nYou are in the Dining Room\nInventory : ['key', 'potion']\n---------------------------\n>go south\nYou escaped the house... YOU WIN!"
+      },
+      {
+        "type": "paragraph",
+        "text": "Finally, let’s add some instructions to your game, so that the player knows what they have to do. Edit the `showInstructions()` function to include more information."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "text": "def showInstructions():\n    # Print a main menu and the commands\n    print(\n        \"\"\"\n          RPG Game\n          ========\n\n          Get to the Garden with a key and a potion\n          Avoid the monsters!\n\n          Commands:\n          go [direction]\n          get [item]\n          \"\"\"\n    )"
+      },
+      {
+        "type": "paragraph",
+        "text": "Test your game and you should see your new instructions."
+      }
+    ]
+  },
+  {
+    "id": "challenge",
+    "title": "Challenge",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Use what you’ve learnt to create your own game. Here are some ideas:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Add more rooms to your game. Remember to add a door to/from one of the other rooms!",
+          "Add more items. You can add anything that you think would be helpful in trying to escape the house! For example, a shield or a magic potion.",
+          "Add more monsters to your game, to make it harder to escape the house!",
+          "Modify the condition for winning - where does the player have to get to, and with which objects in their inventory?",
+          "Add stairs to your map and have more than one level of rooms, by typing `go up` and `go down`."
+        ]
+      }
+    ]
+  }
+]

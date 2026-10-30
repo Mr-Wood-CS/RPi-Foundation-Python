@@ -1,0 +1,9 @@
+.lesson-content { color: var(--ink); }
+.lesson-content p { margin-bottom: 20px; max-width: 70ch; overflow-wrap: anywhere; }
+.lesson-content h3 { font-size: 1.25rem; margin: 32px 0 16px; }
+.lesson-content figure { margin: 28px 0; background: white; color: #58635c; border: 1px solid var(--border); border-radius: 16px; padding: 24px; text-align: center; }
+.lesson-content figure img { display: block; max-height: 500px; width: auto; max-width: 100%; margin: auto; object-fit: contain; }
+.lesson-content figcaption { font-size: .75rem; line-height: 1.5; margin: 18px auto 0; max-width: 58ch; }
+.lesson-content ul { padding-left: 24px; }
+.lesson-content li { padding-left: 6px; margin-bottom: 20px; }
+@media (max-width: 500px) { .lesson-content figure { padding: 16px; } }

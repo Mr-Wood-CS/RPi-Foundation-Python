@@ -1,0 +1,6 @@
+.challenge { border-top: 4px solid var(--accent); padding-top: 28px; }
+.challenge__eyebrow { color: var(--accent); font-size: .7rem; font-weight: 750; letter-spacing: .12em; margin-bottom: 14px; }
+.challenge h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+.challenge__intro { font-size: 1.125rem; color: var(--muted); margin-bottom: 32px; }
+.challenge__complete { display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 20px 0; cursor: pointer; border-top: 1px solid var(--border); }
+.challenge__complete input { width: 22px; height: 22px; accent-color: var(--accent); }

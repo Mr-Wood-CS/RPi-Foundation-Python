@@ -1,0 +1,4 @@
+import './Footer.css'
+export default function Footer() {
+  return <footer className="site-footer"><div><strong>Keep exploring.</strong><p>Lesson published by the <a href="https://www.raspberrypi.org">Raspberry Pi Foundation</a>.<br />Adapted into an interactive React lesson under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p></div><div className="site-footer__links"><a href="https://github.com/RaspberryPiLearning/rpg">Original project & license ↗</a><a href="https://www.raspberrypi.org/accessibility/">Accessibility</a><a href="https://www.raspberrypi.org/cookies/">Cookies Policy</a><a href="https://www.raspberrypi.org/privacy/">Privacy Policy</a><a href="https://projects.raspberrypi.org/en/projects/translating-for-raspberry-pi">Translate for us</a></div></footer>
+}

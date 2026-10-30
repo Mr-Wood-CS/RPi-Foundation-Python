@@ -1,0 +1,8 @@
+.code-block { background: var(--code); color: var(--code-ink); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin: 24px 0; }
+.code-block__bar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 6px 12px 6px 22px; border-bottom: 1px solid #526357; font-size: .75rem; }
+.code-block__bar button { color: #e2eee5; background: transparent; border: 1px solid #526357; border-radius: 7px; min-height: 44px; padding: 6px 14px; }
+.code-block__bar button:hover { background: #304638; }
+.code-block pre { margin: 0; padding: 24px; overflow: auto; font: .85rem/1.8 'Cascadia Code', Consolas, monospace; tab-size: 4; }
+.code-block :focus-visible { outline-color: #a0d5b2; outline-offset: -4px; }
+.code-block__status { font-size: .75rem; margin: 0; padding: 0 22px; }
+.code-block__status:not(:empty) { padding-bottom: 14px; }

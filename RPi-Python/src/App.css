@@ -1,0 +1,7 @@
+.page-shell { max-width: 1200px; margin: auto; padding: 40px 40px 0; }
+.lesson-layout { display: grid; grid-template-columns: 244px minmax(0, 1fr); gap: 52px; align-items: start; margin-top: 48px; scroll-margin-top: 24px; }
+.lesson-main { min-width: 0; }
+.storage-notice { color: var(--muted); font-size: .875rem; }
+.skip-link { position: fixed; top: -100px; left: 20px; z-index: 5; background: var(--surface); padding: 16px; border: 2px solid var(--accent); }
+.skip-link:focus { top: 12px; }
+@media (max-width: 800px) { .page-shell { padding: 24px 20px 0; } .lesson-layout { grid-template-columns: 1fr; gap: 28px; margin-top: 28px; } }
